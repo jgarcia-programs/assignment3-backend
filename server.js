@@ -4,16 +4,6 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 
-app.use(express.static("public"));
-
-app.get("/", (req, res) => {
-  res.redirect("/game");
-});
-
-app.get("/game", (req, res) => {
-  res.sendFile("index.html", { root: "public" });
-});
-
 // route for fetching all pokemons
 // accepts an optional parameter for fetching the limit
 // randomizes each time (defaults to 3) ensures we don't get the same pokemon in the different evolutions
